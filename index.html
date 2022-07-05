@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Interactive pricing component</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./dist/css/main.css" />
+    <script src="./dist/js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- <img class="design" src="design/mobile-design.jpg" alt="" /> -->
+    <main>
+      <div class="container">
+        <section class="intro">
+          <h1 class="intro__heading">Simple, traffic-based pricing</h1>
+          <p class="intro__description">Sign-up for our 30-day trial. No credit card required.</p>
+        </section>
+        <section class="card">
+          <div class="card__top">
+            <h2 class="card__heading"><span data-pageviews></span>100k Pageviews</h2>
+            <div class="card__price">
+              <span class="card__value">$16.00</span>
+              <span>/month</span>
+            </div>
+            <input class="card__slider" type="range" name="price-range" min="1" max="5" />
+            <div class="card__options">
+              <label for="monthly-option">Monthly Billing</label>
+              <input type="radio" name="billing" id="monthly-option" />
+              <label for="yearly-option">Yearly Billing</label>
+              <input type="radio" name="billing" id="yearly-option" />
+              <div class="card__toggle"></div>
+              <span class="card__discount">25% discount</span>
+            </div>
+          </div>
+          <hr class="card__divider" />
+          <div class="card__bottom">
+            <ul class="card__list">
+              <li class="card__item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+                  <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1" />
+                </svg>
+                Unlimited websites
+              </li>
+              <li class="card__item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+                  <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1" />
+                </svg>
+                100% data ownership
+              </li>
+              <li class="card__item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8">
+                  <path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1" />
+                </svg>
+                Email reports
+              </li>
+            </ul>
+            <button class="card__button">Start my trial</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer noopener">Frontend Mentor</a>. Coded with
+        <i class="fa-solid fa-heart"></i> by <a href="https://github.com/LucasWeidas" target="_blank" rel="noreferrer noopener">Lucas Weidas</a>.
+      </p>
+    </footer>
+  </body>
+</html>

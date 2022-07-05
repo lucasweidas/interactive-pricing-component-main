@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+body {
+  background: url('../../images/bg-pattern.svg') top left / cover no-repeat;
+}
+
+.design {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  // z-index: -1;
+}

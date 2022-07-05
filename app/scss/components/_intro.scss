@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.intro {
+  height: rem(290);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('../../images/pattern-circles.svg') center / auto 100% no-repeat;
+  margin-block: rem(114) rem(64);
+  padding-block: rem(63);
+
+  &__description {
+    max-width: 24ch;
+    letter-spacing: 0.04em;
+    line-height: 1.9em;
+    margin-block-start: rem(15);
+  }
+}

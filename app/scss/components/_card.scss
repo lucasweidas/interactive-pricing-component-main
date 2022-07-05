@@ -1,0 +1,86 @@
+@use '../abstracts' as *;
+
+.card {
+  width: min(100%, rem(654));
+  background-color: $white;
+
+  @include breakpoint(medium) {
+    --padding-inline: 48;
+    border-radius: rem(14);
+    padding: rem(68) rem(24);
+  }
+
+  &__top {
+    display: grid;
+    justify-items: center;
+    grid-template-areas: 'heading' 'slider' 'price' 'options';
+
+    // @include breakpoint(medium) {
+    //   row-gap: rem(60);
+    // }
+  }
+
+  &__heading {
+    grid-area: heading;
+  }
+
+  &__price {
+    grid-area: price;
+  }
+
+  &__slider {
+    --thumb-size: 5rem;
+    --thumb-transition: background-color 300ms ease;
+    width: min(100%, rem(558));
+    height: rem(16);
+    grid-area: slider;
+    background-color: $soft-cyan;
+    border-radius: rem(8);
+    margin-block: rem(80);
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+      background: $strong-cyan url('../../images/icon-slider.svg') center / auto rem(26) no-repeat;
+      border-radius: 50%;
+      border: none;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      transition: var(--thumb-transition);
+
+      &:hover {
+        background-color: $soft-cyan;
+      }
+
+      &:active {
+        background-color: $strong-cyan;
+      }
+    }
+
+    &::-moz-range-thumb {
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+      background: $strong-cyan url('../../images/icon-slider.svg') center / auto rem(26) no-repeat;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      transition: var(--thumb-transition);
+
+      &:hover {
+        background-color: $soft-cyan;
+      }
+
+      &:active {
+        background-color: $strong-cyan;
+      }
+    }
+  }
+
+  &__options {
+    grid-area: options;
+  }
+}

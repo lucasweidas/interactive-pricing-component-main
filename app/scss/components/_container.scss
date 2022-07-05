@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.container {
+  display: grid;
+  justify-items: center;
+  margin-inline: auto;
+}

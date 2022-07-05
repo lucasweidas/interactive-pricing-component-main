@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+:root {
+  --ff-primary: 'Manrope', sans-serif;
+  --fs-100: 1.5rem;
+  --fs-200: 2rem;
+  --fs-300: 2.5rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-100);
+  color: $grayish-blue;
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--fs-300);
+  font-weight: 800;
+  color: $dark-desaturated-blue;
+}
+
+h2 {
+  font-size: var(--fs-100);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+}
