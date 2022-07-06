@@ -5,7 +5,7 @@
   background-color: $white;
 
   @include breakpoint(medium) {
-    --padding-inline: 48;
+    // --padding-inline: 48rem;
     border-radius: rem(14);
     padding: rem(68) rem(24);
   }
@@ -14,10 +14,6 @@
     display: grid;
     justify-items: center;
     grid-template-areas: 'heading' 'slider' 'price' 'options';
-
-    // @include breakpoint(medium) {
-    //   row-gap: rem(60);
-    // }
   }
 
   &__heading {
@@ -25,18 +21,29 @@
   }
 
   &__price {
+    display: inline-flex;
+    align-items: center;
+    column-gap: rem(22);
     grid-area: price;
+    font-size: 1.75rem;
+  }
+
+  &__value {
+    font-size: var(--fs-400);
+    font-weight: 600;
+    line-height: 1;
   }
 
   &__slider {
     --thumb-size: 5rem;
     --thumb-transition: background-color 300ms ease;
+    --thumb-shadow: 0 1.5rem 1.25rem 0.125rem hsl(174, 77%, 80%, 0.8);
     width: min(100%, rem(558));
     height: rem(16);
     grid-area: slider;
     background-color: $soft-cyan;
     border-radius: rem(8);
-    margin-block: rem(80);
+    margin-block: rem(80) rem(93);
     -webkit-appearance: none;
     appearance: none;
     outline: none;
@@ -49,6 +56,7 @@
       border: none;
       -webkit-appearance: none;
       appearance: none;
+      box-shadow: var(--thumb-shadow);
       cursor: pointer;
       transition: var(--thumb-transition);
 
@@ -67,6 +75,7 @@
       background: $strong-cyan url('../../images/icon-slider.svg') center / auto rem(26) no-repeat;
       border-radius: 50%;
       border: none;
+      box-shadow: var(--thumb-shadow);
       cursor: pointer;
       transition: var(--thumb-transition);
 
@@ -82,5 +91,33 @@
 
   &__options {
     grid-area: options;
+    display: grid;
+    grid-template-areas: 'monthly toggle yearly';
+    grid-template-columns: repeat(3, max-content);
+    position: relative;
+    margin-block: rem(84);
+
+    label:nth-child(1) {
+      grid-area: monthly;
+    }
+
+    label:nth-child(2) {
+      grid-area: yearly;
+    }
+  }
+
+  &__radio {
+    appearance: none;
+    opacity: 0;
+    position: absolute;
+  }
+
+  &__toggle {
+    width: rem(86);
+    height: rem(44);
+    grid-area: toggle;
+    position: relative;
+    background-color: $light-grayish-blue-200;
+    border-radius: rem(22);
   }
 }
