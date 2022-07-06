@@ -36,12 +36,15 @@
             </div>
             <input class="card__slider" type="range" name="price-range" min="1" max="5" />
             <div class="card__options">
-              <label for="monthly-radio">Monthly Billing</label>
-              <input class="card__radio" type="radio" name="billing" id="monthly-radio" />
-              <label for="yearly-radio">Yearly Billing</label>
-              <input class="card__radio" type="radio" name="billing" id="yearly-radio" />
-              <div class="card__toggle"></div>
-              <span class="card__discount">25% discount</span>
+              <span class="card__description">Monthly Billing</span>
+              <label class="toggle">
+                <input class="toggle__input" type="checkbox" />
+                <span class="toggle__icon"></span>
+              </label>
+              <span class="card__description">
+                Yearly Billing
+                <span class="card__discount">25% <span>discount</span></span>
+              </span>
             </div>
           </div>
           <hr class="card__divider" />

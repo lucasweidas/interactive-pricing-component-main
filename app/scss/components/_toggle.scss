@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.toggle {
+  --toggle-width: 5.375rem;
+  --toggle-height: 2.75rem;
+  --toggle-icon-size: 1.75rem;
+  --toggle-space: calc((var(--toggle-height) - var(--toggle-icon-size)) / 2);
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  grid-area: toggle;
+  position: relative;
+  background-color: $light-grayish-blue-200;
+  border-radius: calc(var(--toggle-height) / 2);
+  cursor: pointer;
+
+  &:hover,
+  &:focus-within {
+    background-color: $strong-cyan;
+  }
+
+  &__input {
+    position: absolute;
+    appearance: none;
+    opacity: 0;
+
+    &:checked {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    width: var(--toggle-icon-size);
+    height: var(--toggle-icon-size);
+    position: absolute;
+    top: var(--toggle-space);
+    left: var(--toggle-space);
+    background-color: $white;
+    border-radius: 50%;
+    transition: transform 300ms ease;
+
+    .toggle__input:checked ~ & {
+      transform: translateX(calc(var(--toggle-width) - 100% - var(--toggle-space) * 2));
+    }
+  }
+}
