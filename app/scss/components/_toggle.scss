@@ -12,6 +12,7 @@
   background-color: $light-grayish-blue-200;
   border-radius: calc(var(--toggle-height) / 2);
   cursor: pointer;
+  transition: background-color 300ms ease;
 
   &:hover,
   &:focus-within {

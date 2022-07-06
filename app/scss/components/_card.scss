@@ -3,17 +3,19 @@
 .card {
   width: min(100%, rem(654));
   background-color: $white;
-  
+  box-shadow: rem(-2) rem(8) rem(20) rgba(black, 0.08);
+
   @include breakpoint(medium) {
     --card-padding-inline: 1.5rem;
     border-radius: rem(14);
-    padding: rem(68) var(--card-padding-inline);
+    padding-inline: var(--card-padding-inline);
   }
 
   &__top {
     display: grid;
     justify-items: center;
     grid-template-areas: 'heading' 'slider' 'price' 'options';
+    padding-block: rem(68) rem(78);
   }
 
   &__heading {
@@ -44,7 +46,6 @@
     background-color: $soft-cyan;
     border-radius: rem(8);
     margin-block: rem(80) rem(93);
-    -webkit-appearance: none;
     appearance: none;
     outline: none;
 
@@ -54,11 +55,11 @@
       background: $strong-cyan url('../../images/icon-slider.svg') center / auto rem(26) no-repeat;
       border-radius: 50%;
       border: none;
-      -webkit-appearance: none;
-      appearance: none;
       box-shadow: var(--thumb-shadow);
       cursor: pointer;
       transition: var(--thumb-transition);
+      -webkit-appearance: none;
+      appearance: none;
 
       &:hover {
         background-color: $soft-cyan;
@@ -99,7 +100,7 @@
     grid-template-columns: repeat(3, max-content);
     column-gap: rem(24);
     position: relative;
-    margin-block: rem(79);
+    margin-block-start: rem(79);
   }
 
   &__description {
@@ -118,17 +119,14 @@
   &__discount {
     --discount-w: 5.125rem;
     --discount-h: 2.375rem;
-    display: inline-block;
     width: var(--discount-w);
     height: var(--discount-h);
+    display: inline-block;
     background-color: $light-grayish-red;
     border-radius: calc(var(--discount-h) / 2);
     padding: rem(7);
     font-size: rem(18);
     color: $light-red;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
 
     span {
       display: none;
@@ -144,5 +142,32 @@
     border: none;
     margin-inline: calc(var(--card-padding-inline) * -1);
     background-color: $light-grayish-blue-100;
+  }
+
+  &__bottom {
+    display: grid;
+    justify-items: center;
+    padding-block: rem(48) rem(68);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: rem(21);
+    margin-block-end: rem(64);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: rem(32);
+
+    svg {
+      width: rem(18);
+      height: rem(16);
+    }
   }
 }

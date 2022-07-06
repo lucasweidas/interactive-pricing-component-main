@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+.footer {
+  padding-block: rem(20);
+  margin-block-start: rem(176);
+
+  &__attribution {
+    font-size: rem(16);
+
+    a:hover {
+      color: $dark-desaturated-blue;
+      text-decoration: underline;
+    }
+
+    .fa-heart {
+      color: $dark-desaturated-blue;
+      margin-inline: 0.125em;
+      animation: heart-pulse 2000ms linear infinite;
+
+      @keyframes heart-pulse {
+        0%,
+        100% {
+          transform: scale(1.2);
+        }
+        50% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
