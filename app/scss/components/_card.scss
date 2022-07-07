@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .card {
-  width: min(100%, rem(654));
+  width: min(100%, rem(670));
   background-color: $white;
   box-shadow: rem(-2) rem(8) rem(20) rgba(hsl(225, 20%, 60%), 0.15);
 
@@ -11,15 +11,32 @@
     padding-inline: var(--card-padding-inline);
   }
 
+  @include breakpoint(large) {
+    --card-padding-inline: 2.875rem;
+    width: min(100%, rem(540));
+    border-radius: rem(8);
+  }
+
   &__top {
     display: grid;
     justify-items: center;
     grid-template-areas: 'heading' 'slider' 'price' 'options';
     padding-block: rem(68) rem(78);
+
+    @include breakpoint(large) {
+      align-items: center;
+      grid-template-areas: 'heading price' 'slider slider' 'options options';
+      padding-block: rem(48) rem(40);
+    }
   }
 
   &__heading {
     grid-area: heading;
+
+    @include breakpoint(large) {
+      justify-self: flex-start;
+      letter-spacing: 0.1em;
+    }
   }
 
   &__price {
@@ -28,6 +45,12 @@
     column-gap: rem(22);
     grid-area: price;
     font-size: 1.75rem;
+
+    @include breakpoint(large) {
+      column-gap: rem(8);
+      font-size: 1rem;
+      justify-self: flex-end;
+    }
   }
 
   &__value {
@@ -39,7 +62,7 @@
 
   &__options {
     grid-area: options;
-    justify-self: flex-end;
+    justify-self: center;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -48,9 +71,18 @@
     column-gap: rem(24);
     position: relative;
     margin-block-start: rem(79);
+
+    @include breakpoint(large) {
+      justify-self: center;
+      column-gap: rem(16);
+      margin-block-start: 0;
+    }
   }
 
   &__description {
+    position: relative;
+    line-height: 1;
+
     &:nth-of-type(1) {
       grid-area: monthly;
     }
@@ -72,11 +104,21 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    position: absolute;
+    left: calc(100% + rem(10));
     background-color: $light-grayish-red;
     border-radius: calc(var(--discount-h) / 2);
     font-size: rem(18);
     line-height: 1;
     color: $light-red;
+
+    @include breakpoint(large) {
+      --discount-w: 5rem;
+      --discount-h: 1.25rem;
+      right: calc(-100% - rem(10));
+      font-size: rem(10);
+      font-weight: 800;
+    }
 
     &::before {
       content: '-25%';
@@ -98,6 +140,12 @@
     display: grid;
     justify-items: center;
     padding-block: rem(48) rem(68);
+
+    @include breakpoint(large) {
+      align-items: center;
+      grid-template-columns: repeat(2, auto);
+      padding-block: rem(32) rem(32);
+    }
   }
 
   &__list {
@@ -107,6 +155,13 @@
     align-items: center;
     row-gap: rem(21);
     margin-block-end: rem(64);
+
+    @include breakpoint(large) {
+      justify-self: flex-start;
+      align-items: flex-start;
+      row-gap: rem(10);
+      margin-block-end: 0;
+    }
   }
 
   &__item {
@@ -115,9 +170,18 @@
     align-items: center;
     column-gap: rem(32);
 
+    @include breakpoint(large) {
+      column-gap: rem(16);
+    }
+
     svg {
       width: rem(18);
       height: rem(16);
+
+      @include breakpoint(large) {
+        width: rem(9);
+        height: rem(8);
+      }
     }
   }
 }

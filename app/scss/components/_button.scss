@@ -18,7 +18,14 @@
   cursor: pointer;
   transition: color 200ms ease;
 
-  &:hover,&:focus-visible {
+  @include breakpoint(large) {
+    --button-width: 10.625rem;
+    --button-height: 2.563rem;
+    justify-self: flex-end;
+  }
+
+  &:hover,
+  &:focus-visible {
     color: $white;
   }
 }

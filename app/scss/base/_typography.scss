@@ -6,6 +6,12 @@
   --fs-200: 2rem;
   --fs-300: 2.5rem;
   --fs-400: 4rem;
+
+  @include breakpoint(large) {
+    --fs-100: 0.813rem;
+    --fs-300: 1.75rem;
+    --fs-400: 2.5rem;
+  }
 }
 
 body {
@@ -14,6 +20,10 @@ body {
   font-weight: 600;
   color: $grayish-blue;
   text-align: center;
+
+  @include breakpoint(large) {
+    text-align: start;
+  }
 }
 
 h1 {

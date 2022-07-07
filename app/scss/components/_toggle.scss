@@ -14,6 +14,12 @@
   cursor: pointer;
   transition: background-color 300ms ease;
 
+  @include breakpoint(large) {
+    --toggle-width: 2.75rem;
+    --toggle-height: 1.375rem;
+    --toggle-icon-size: 0.875rem;
+  }
+
   &:hover,
   &:focus-within {
     background-color: $strong-cyan;
