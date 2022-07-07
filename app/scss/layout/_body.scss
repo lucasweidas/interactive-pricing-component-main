@@ -1,7 +1,8 @@
 @use '../abstracts' as *;
 
 body {
-  background: $very-pale-Blue url('../../images/bg-pattern.svg') top left / cover no-repeat;
+  min-height: 100vh;
+  background: $very-pale-blue url('../../images/bg-pattern.svg') top left / auto 50% no-repeat;
 }
 
 .design {

@@ -3,7 +3,7 @@
 .card {
   width: min(100%, rem(654));
   background-color: $white;
-  box-shadow: rem(-2) rem(8) rem(20) rgba(black, 0.08);
+  box-shadow: rem(-2) rem(8) rem(20) rgba(hsl(225, 20%, 60%), 0.15);
 
   @include breakpoint(medium) {
     --card-padding-inline: 1.5rem;
@@ -32,62 +32,9 @@
 
   &__value {
     font-size: var(--fs-400);
-    font-weight: 600;
+    font-weight: 800;
     line-height: 1;
-  }
-
-  &__slider {
-    --thumb-size: 5rem;
-    --thumb-transition: background-color 300ms ease;
-    --thumb-shadow: 0 1.5rem 1.25rem 0.125rem hsl(174, 77%, 80%, 0.8);
-    width: min(100%, rem(558));
-    height: rem(16);
-    grid-area: slider;
-    background-color: $soft-cyan;
-    border-radius: rem(8);
-    margin-block: rem(80) rem(93);
-    appearance: none;
-    outline: none;
-
-    &::-webkit-slider-thumb {
-      width: var(--thumb-size);
-      height: var(--thumb-size);
-      background: $strong-cyan url('../../images/icon-slider.svg') center / auto rem(26) no-repeat;
-      border-radius: 50%;
-      border: none;
-      box-shadow: var(--thumb-shadow);
-      cursor: pointer;
-      transition: var(--thumb-transition);
-      -webkit-appearance: none;
-      appearance: none;
-
-      &:hover {
-        background-color: $soft-cyan;
-      }
-
-      &:active {
-        background-color: $strong-cyan;
-      }
-    }
-
-    &::-moz-range-thumb {
-      width: var(--thumb-size);
-      height: var(--thumb-size);
-      background: $strong-cyan url('../../images/icon-slider.svg') center / auto rem(26) no-repeat;
-      border-radius: 50%;
-      border: none;
-      box-shadow: var(--thumb-shadow);
-      cursor: pointer;
-      transition: var(--thumb-transition);
-
-      &:hover {
-        background-color: $soft-cyan;
-      }
-
-      &:active {
-        background-color: $strong-cyan;
-      }
-    }
+    color: $dark-desaturated-blue;
   }
 
   &__options {
@@ -121,18 +68,21 @@
     --discount-h: 2.375rem;
     width: var(--discount-w);
     height: var(--discount-h);
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     background-color: $light-grayish-red;
     border-radius: calc(var(--discount-h) / 2);
-    padding: rem(7);
     font-size: rem(18);
+    line-height: 1;
     color: $light-red;
 
-    span {
-      display: none;
+    &::before {
+      content: '-25%';
 
       @include breakpoint(large) {
-        display: inline-block;
+        content: '25% discount';
       }
     }
   }

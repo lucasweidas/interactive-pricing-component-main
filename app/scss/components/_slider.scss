@@ -1,0 +1,72 @@
+@use '../abstracts' as *;
+
+.slider {
+  --thumb-size: 5rem;
+  --thumb-transition: background-color 300ms ease;
+  --thumb-shadow: 0 1.5rem 1.25rem 0.125rem hsl(174, 77%, 80%, 0.8);
+  width: min(100%, rem(558));
+  height: rem(16);
+  grid-area: slider;
+  background-image: linear-gradient(to right, $soft-cyan 0%, $soft-cyan 50%, $light-grayish-blue-100 50%, $light-grayish-blue-100 100%);
+  border-radius: rem(8);
+  margin-block: rem(80) rem(93);
+  appearance: none;
+  outline: none;
+
+  &:focus-visible::-webkit-slider-thumb {
+    outline: rem(2) solid $dark-desaturated-blue;
+  }
+
+  &:focus-visible::-moz-range-thumb {
+    outline: rem(2) solid $dark-desaturated-blue;
+  }
+
+  &::-webkit-slider-thumb {
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    background: $strong-cyan url('../../images/icon-slider.svg') center / auto rem(26) no-repeat;
+    border-radius: 50%;
+    border: none;
+    box-shadow: var(--thumb-shadow);
+    appearance: none;
+    cursor: pointer;
+    transition: var(--thumb-transition);
+
+    &:hover {
+      background-color: $soft-cyan;
+    }
+
+    &:active {
+      background-color: $strong-cyan;
+      cursor: grabbing;
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  &::-moz-range-thumb {
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    background: $strong-cyan url('../../images/icon-slider.svg') center / auto rem(26) no-repeat;
+    border-radius: 50%;
+    border: none;
+    box-shadow: var(--thumb-shadow);
+    cursor: pointer;
+    transition: var(--thumb-transition);
+
+    &:hover {
+      background-color: $soft-cyan;
+    }
+
+    &:active {
+      background-color: $strong-cyan;
+      cursor: grabbing;
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

@@ -1,8 +1,9 @@
 @use '../abstracts' as *;
 
 .container {
-  min-height: 100vh;
   display: grid;
   justify-items: center;
+  align-content: center;
+  padding-inline: rem(20);
   margin-inline: auto;
 }

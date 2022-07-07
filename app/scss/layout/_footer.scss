@@ -1,11 +1,12 @@
 @use '../abstracts' as *;
 
 .footer {
-  padding-block: rem(20);
-  margin-block-start: rem(176);
+  margin-block-start: rem(64);
 
   &__attribution {
+    padding-block: rem(16);
     font-size: rem(16);
+    line-height: 1em;
 
     a:hover {
       color: $dark-desaturated-blue;
