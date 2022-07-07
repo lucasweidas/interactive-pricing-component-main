@@ -1,8 +1,8 @@
 @use '../abstracts' as *;
 
 .button {
-  --button-width: 21.25rem;
-  --button-height: 5.125rem;
+  --button-width: clamp(10rem, 45vw, 15rem);
+  --button-height: clamp(3.5rem, 10vw, 4.5rem);
   width: var(--button-width);
   height: var(--button-height);
   display: flex;
@@ -17,6 +17,11 @@
   color: $pale-blue;
   cursor: pointer;
   transition: color 200ms ease;
+
+  @include breakpoint(medium) {
+    --button-width: 21.25rem;
+    --button-height: 5.125rem;
+  }
 
   @include breakpoint(large) {
     --button-width: 10.625rem;

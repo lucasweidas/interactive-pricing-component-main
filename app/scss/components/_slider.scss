@@ -2,19 +2,29 @@
 
 .slider {
   --slider-w: 34.875rem;
-  --slider-h: 1rem;
-  --thumb-size: 5rem;
-  --thumb-icon-h: 1.625rem;
-  --thumb-shadow: 0 2rem 1.25rem 0.125rem hsl(174, 77%, 80%, 0.8);
+  --slider-h: 0.75rem;
+  --thumb-size: 3.5rem;
+  --thumb-icon-h: 1.125rem;
+  --thumb-shadow: 0 2rem 1rem 0.125rem hsl(174, 77%, 80%, 0.8);
   --thumb-transition: background-color 300ms ease;
+  --slider-margin-b: 4.375rem 5rem;
   width: min(100%, var(--slider-w));
   height: var(--slider-h);
   grid-area: slider;
   background-image: linear-gradient(to right, $soft-cyan 0%, $soft-cyan 50%, $light-grayish-blue-100 50%, $light-grayish-blue-100 100%);
   border-radius: calc(var(--slider-h) / 2);
-  margin-block: rem(80) rem(93);
+  margin-block: var(--slider-margin-b);
   appearance: none;
   outline: none;
+
+  @include breakpoint(medium) {
+    --slider-w: 34.875rem;
+    --slider-h: 1rem;
+    --thumb-size: 5rem;
+    --thumb-icon-h: 1.625rem;
+    --thumb-shadow: 0 2rem 1.25rem 0.125rem hsl(174, 77%, 80%, 0.8);
+    --slider-margin-b: 5rem 5.813rem;
+  }
 
   @include breakpoint(large) {
     --slider-w: 27.75rem;
@@ -22,7 +32,7 @@
     --thumb-size: 2.5rem;
     --thumb-icon-h: 0.813rem;
     --thumb-shadow: 0 1rem 1.25rem 0.125rem hsl(174, 77%, 80%);
-    margin-block: rem(46) rem(57);
+    --slider-margin-b: 2.875rem 3.563rem;
   }
 
   &:focus-visible::-webkit-slider-thumb {

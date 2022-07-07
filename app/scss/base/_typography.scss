@@ -2,13 +2,21 @@
 
 :root {
   --ff-primary: 'Manrope', sans-serif;
-  --fs-100: 1.5rem;
-  --fs-200: 2rem;
-  --fs-300: 2.5rem;
-  --fs-400: 4rem;
+  --fs-100: 1rem;
+  --fs-200: 1rem;
+  --fs-300: 2rem;
+  --fs-400: clamp(2.25rem, 12vw, 2.75rem);
+
+  @include breakpoint(medium) {
+    --fs-100: 1.5rem;
+    --fs-200: 1.75rem;
+    --fs-300: 2.5rem;
+    --fs-400: 4rem;
+  }
 
   @include breakpoint(large) {
     --fs-100: 0.813rem;
+    --fs-200: 1rem;
     --fs-300: 1.75rem;
     --fs-400: 2.5rem;
   }
@@ -30,11 +38,4 @@ h1 {
   font-size: var(--fs-300);
   font-weight: 800;
   color: $dark-desaturated-blue;
-}
-
-h2 {
-  font-size: var(--fs-100);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.17em;
 }

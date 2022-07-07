@@ -1,9 +1,9 @@
 @use '../abstracts' as *;
 
 .toggle {
-  --toggle-width: 5.375rem;
-  --toggle-height: 2.75rem;
-  --toggle-icon-size: 1.75rem;
+  --toggle-width: 3.5rem;
+  --toggle-height: 1.75rem;
+  --toggle-icon-size: 1.125rem;
   --toggle-space: calc((var(--toggle-height) - var(--toggle-icon-size)) / 2);
   width: var(--toggle-width);
   height: var(--toggle-height);
@@ -12,7 +12,15 @@
   background-color: $light-grayish-blue-200;
   border-radius: calc(var(--toggle-height) / 2);
   cursor: pointer;
+  transform: rotateZ(90deg);
   transition: background-color 300ms ease;
+
+  @include breakpoint(medium) {
+    --toggle-width: 5.375rem;
+    --toggle-height: 2.75rem;
+    --toggle-icon-size: 1.75rem;
+    transform: none;
+  }
 
   @include breakpoint(large) {
     --toggle-width: 2.75rem;

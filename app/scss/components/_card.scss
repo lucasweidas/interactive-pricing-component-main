@@ -1,14 +1,15 @@
 @use '../abstracts' as *;
 
 .card {
+  --card-padding-inline: 1.5rem;
   width: min(100%, rem(670));
   background-color: $white;
+  padding-inline: var(--card-padding-inline);
   box-shadow: rem(-2) rem(8) rem(20) rgba(hsl(225, 20%, 60%), 0.15);
 
   @include breakpoint(medium) {
     --card-padding-inline: 1.5rem;
     border-radius: rem(14);
-    padding-inline: var(--card-padding-inline);
   }
 
   @include breakpoint(large) {
@@ -32,6 +33,10 @@
 
   &__heading {
     grid-area: heading;
+    font-size: var(--fs-100);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.17em;
 
     @include breakpoint(large) {
       justify-self: flex-start;
@@ -42,13 +47,17 @@
   &__price {
     display: inline-flex;
     align-items: center;
-    column-gap: rem(22);
+    column-gap: rem(12);
     grid-area: price;
-    font-size: 1.75rem;
+    font-size: var(--fs-200);
+    white-space: nowrap;
+
+    @include breakpoint(medium) {
+      column-gap: rem(22);
+    }
 
     @include breakpoint(large) {
       column-gap: rem(8);
-      font-size: 1rem;
       justify-self: flex-end;
     }
   }
@@ -66,11 +75,18 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-areas: 'monthly toggle yearly';
-    grid-template-columns: repeat(3, max-content);
-    column-gap: rem(24);
+    grid-template-areas: 'toggle monthly' 'toggle yearly';
+    grid-template-columns: repeat(2, max-content);
+    gap: rem(18) rem(4);
     position: relative;
-    margin-block-start: rem(79);
+    margin-block-start: rem(54);
+
+    @include breakpoint(medium) {
+      grid-template-areas: 'monthly toggle yearly';
+      grid-template-columns: repeat(3, max-content);
+      column-gap: rem(24);
+      margin-block-start: rem(79);
+    }
 
     @include breakpoint(large) {
       justify-self: center;
@@ -96,21 +112,28 @@
   }
 
   &__discount {
-    --discount-w: 5.125rem;
-    --discount-h: 2.375rem;
+    --discount-w: 4rem;
+    --discount-h: 1.875rem;
     width: var(--discount-w);
     height: var(--discount-h);
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    // position: relative;
     position: absolute;
-    left: calc(100% + rem(10));
+    left: calc(100% - rem(10));
     background-color: $light-grayish-red;
     border-radius: calc(var(--discount-h) / 2);
     font-size: rem(18);
     line-height: 1;
     color: $light-red;
+
+    @include breakpoint(medium) {
+      --discount-w: 5.125rem;
+      --discount-h: 2.375rem;
+      left: calc(100% + rem(10));
+      font-size: rem(18);
+    }
 
     @include breakpoint(large) {
       --discount-w: 5rem;
