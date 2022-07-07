@@ -4,6 +4,6 @@
   display: grid;
   justify-items: center;
   align-content: center;
-  padding-inline: rem(20);
+  padding-inline: clamp(1rem, 5vw, 1.5rem);
   margin-inline: auto;
 }
