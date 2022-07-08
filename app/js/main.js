@@ -39,14 +39,15 @@ function getSliderValue() {
 }
 
 function verifyDiscount() {
+  const label = toggle.parentElement;
   const { yearlyDiscount } = pricing;
   const isChecked = toggle.checked;
 
   if (isChecked) {
-    toggle.setAttribute('aria-labelledby', 'yearly-desc');
+    label.setAttribute('aria-labelledby', 'yearly-desc');
     return yearlyDiscount;
   }
-  toggle.setAttribute('aria-labelledby', 'monthly-desc');
+  label.setAttribute('aria-labelledby', 'monthly-desc');
   return 0;
 }
 
