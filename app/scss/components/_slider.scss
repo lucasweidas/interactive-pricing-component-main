@@ -7,11 +7,11 @@
   --thumb-icon-h: 1.125rem;
   --thumb-shadow: 0 2rem 1rem 0.125rem hsl(174, 77%, 80%, 0.8);
   --thumb-transition: background-color 300ms ease;
-  --slider-margin-b: 4.375rem 5rem;
+  --slider-margin-b: 3.75rem 4.25rem;
   width: min(100%, var(--slider-w));
   height: var(--slider-h);
   grid-area: slider;
-  background-image: linear-gradient(to right, $soft-cyan 0%, $soft-cyan 50%, $light-grayish-blue-100 50%, $light-grayish-blue-100 100%);
+  background-image: linear-gradient(to right, var(--soft-cyan) 0%, var(--soft-cyan) 50%, var(--light-grayish-blue-100) 50%, var(--light-grayish-blue-100) 100%);
   border-radius: calc(var(--slider-h) / 2);
   margin-block: var(--slider-margin-b);
   appearance: none;
@@ -36,17 +36,17 @@
   }
 
   &:focus-visible::-webkit-slider-thumb {
-    outline: rem(2) solid $dark-desaturated-blue;
+    outline: rem(2) solid var(--dark-desaturated-blue);
   }
 
   &:focus-visible::-moz-range-thumb {
-    outline: rem(2) solid $dark-desaturated-blue;
+    outline: rem(2) solid var(--dark-desaturated-blue);
   }
 
   &::-webkit-slider-thumb {
     width: var(--thumb-size);
     height: var(--thumb-size);
-    background: $strong-cyan url('../../images/icon-slider.svg') center / auto var(--thumb-icon-h) no-repeat;
+    background: var(--strong-cyan) url('../../images/icon-slider.svg') center / auto var(--thumb-icon-h) no-repeat;
     border-radius: 50%;
     border: none;
     box-shadow: var(--thumb-shadow);
@@ -55,11 +55,11 @@
     transition: var(--thumb-transition);
 
     &:hover {
-      background-color: $soft-cyan;
+      background-color: var(--soft-cyan);
     }
 
     &:active {
-      background-color: $strong-cyan;
+      background-color: var(--strong-cyan);
       cursor: grabbing;
     }
 
@@ -71,7 +71,7 @@
   &::-moz-range-thumb {
     width: var(--thumb-size);
     height: var(--thumb-size);
-    background: $strong-cyan url('../../images/icon-slider.svg') center / auto var(--thumb-icon-h) no-repeat;
+    background: var(--strong-cyan) url('../../images/icon-slider.svg') center / auto var(--thumb-icon-h) no-repeat;
     border-radius: 50%;
     border: none;
     box-shadow: var(--thumb-shadow);
@@ -79,11 +79,11 @@
     transition: var(--thumb-transition);
 
     &:hover {
-      background-color: $soft-cyan;
+      background-color: var(--soft-cyan);
     }
 
     &:active {
-      background-color: $strong-cyan;
+      background-color: var(--strong-cyan);
       cursor: grabbing;
     }
 

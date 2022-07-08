@@ -4,7 +4,7 @@ body {
   min-height: 100vh;
   display: grid;
   align-content: center;
-  background: $very-pale-blue url('../../images/bg-pattern.svg') top center / 100% 50% no-repeat;
+  background: var(--very-pale-blue) url('../../images/bg-pattern.svg') top center / 100% 50% no-repeat;
 
   @include breakpoint(large) {
     background-size: 100% 57%;

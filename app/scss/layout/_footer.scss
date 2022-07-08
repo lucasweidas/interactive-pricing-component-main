@@ -6,16 +6,16 @@
 
   &__attribution {
     padding: rem(20);
-    font-size: rem(16);
-    line-height: 1em;
+    font-size: clamp(rem(14), 4.5vw, rem(16));
+    line-height: 1.8em;
 
     a:hover {
-      color: $dark-desaturated-blue;
+      color: var(--dark-desaturated-blue);
       text-decoration: underline;
     }
 
     .fa-heart {
-      color: $dark-desaturated-blue;
+      color: var(--dark-desaturated-blue);
       margin-inline: 0.125em;
       animation: heart-pulse 2000ms linear infinite;
 
@@ -24,6 +24,7 @@
         100% {
           transform: scale(1.2);
         }
+
         50% {
           transform: scale(1);
         }

@@ -2,27 +2,33 @@
 
 .card {
   --card-padding-inline: clamp(1rem, 5vw, 1.5rem);
+  --card-border-r: 0.625rem;
   width: min(100%, rem(670));
-  background-color: $white;
+  background-color: var(--white);
   padding-inline: var(--card-padding-inline);
+  border-radius: var(--card-border-r);
   box-shadow: rem(-2) rem(8) rem(20) rgba(hsl(225, 20%, 60%), 0.15);
 
   @include breakpoint(medium) {
     --card-padding-inline: 1.5rem;
-    border-radius: rem(14);
+    --card-border-r: 0.875rem;
   }
 
   @include breakpoint(large) {
     --card-padding-inline: 2.875rem;
+    --card-border-r: 0.5rem;
     width: min(100%, rem(540));
-    border-radius: rem(8);
   }
 
   &__top {
     display: grid;
     justify-items: center;
     grid-template-areas: 'heading' 'slider' 'price' 'options';
-    padding-block: rem(68) rem(78);
+    padding-block: rem(48);
+
+    @include breakpoint(medium) {
+      padding-block: rem(68) rem(78);
+    }
 
     @include breakpoint(large) {
       align-items: center;
@@ -66,7 +72,7 @@
     font-size: var(--fs-400);
     font-weight: 800;
     line-height: 1;
-    color: $dark-desaturated-blue;
+    color: var(--dark-desaturated-blue);
   }
 
   &__options {
@@ -75,12 +81,17 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-areas: 'toggle monthly' 'toggle yearly';
-    gap: rem(18) rem(4);
+    grid-template-areas: 'monthly toggle yearly';
+    column-gap: rem(16);
     position: relative;
-    margin-block-start: rem(54);
+    margin-block-start: rem(44);
 
-    @media screen and (max-width: 23.436em) {
+    @include breakpoint-down(small) {
+      grid-template-areas: 'toggle monthly' 'toggle yearly';
+      gap: rem(18) rem(4);
+    }
+
+    @media screen and (max-width: 19.375em) {
       justify-self: flex-start;
     }
 
@@ -110,7 +121,6 @@
       grid-area: yearly;
       display: inline-flex;
       align-items: center;
-      column-gap: rem(10);
     }
   }
 
@@ -123,12 +133,16 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: calc(100% - rem(10));
-    background-color: $light-grayish-red;
+    left: calc(100% + rem(5));
+    background-color: var(--light-grayish-red);
     border-radius: calc(var(--discount-h) / 2);
     font-size: rem(14);
     line-height: 1;
-    color: $light-red;
+    color: var(--light-red);
+
+    @include breakpoint-down(small) {
+      left: calc(100% - rem(10));
+    }
 
     @include breakpoint(medium) {
       --discount-w: 5.125rem;
@@ -140,7 +154,7 @@
     @include breakpoint(large) {
       --discount-w: 5rem;
       --discount-h: 1.25rem;
-      right: calc(-100% - rem(10));
+      left: calc(100% + rem(10));
       font-size: rem(10);
       font-weight: 800;
     }
@@ -158,13 +172,17 @@
     height: rem(1);
     border: none;
     margin-inline: calc(var(--card-padding-inline) * -1);
-    background-color: $light-grayish-blue-100;
+    background-color: var(--light-grayish-blue-100);
   }
 
   &__bottom {
     display: grid;
     justify-items: center;
-    padding-block: rem(48) rem(68);
+    padding-block: rem(38) rem(48);
+
+    @include breakpoint(medium) {
+      padding-block: rem(48) rem(68);
+    }
 
     @include breakpoint(large) {
       align-items: center;
@@ -178,8 +196,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: rem(21);
-    margin-block-end: rem(64);
+    row-gap: rem(16);
+    margin-block-end: rem(48);
+
+    @include breakpoint(medium) {
+      row-gap: rem(21);
+      margin-block-end: rem(64);
+    }
 
     @include breakpoint(large) {
       justify-self: flex-start;
@@ -193,7 +216,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: rem(32);
+    column-gap: rem(16);
+
+    @include breakpoint(medium) {
+      column-gap: rem(32);
+    }
 
     @include breakpoint(large) {
       column-gap: rem(16);

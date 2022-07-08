@@ -8,13 +8,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $dark-desaturated-blue;
+  background-color: var(--dark-desaturated-blue);
   border: none;
   border-radius: calc(var(--button-height) / 2);
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
-  color: $pale-blue;
+  color: var(--pale-blue);
   cursor: pointer;
   transition: color 200ms ease;
 
@@ -31,6 +31,6 @@
 
   &:hover,
   &:focus-visible {
-    color: $white;
+    color: var(--white);
   }
 }

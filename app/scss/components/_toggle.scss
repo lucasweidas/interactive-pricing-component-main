@@ -9,11 +9,14 @@
   height: var(--toggle-height);
   grid-area: toggle;
   position: relative;
-  background-color: $light-grayish-blue-200;
+  background-color: var(--light-grayish-blue-200);
   border-radius: calc(var(--toggle-height) / 2);
   cursor: pointer;
-  transform: rotateZ(90deg);
   transition: background-color 300ms ease;
+
+  @include breakpoint-down(small) {
+    transform: rotateZ(90deg);
+  }
 
   @include breakpoint(medium) {
     --toggle-width: 5.375rem;
@@ -30,7 +33,7 @@
 
   &:hover,
   &:focus-within {
-    background-color: $strong-cyan;
+    background-color: var(--strong-cyan);
   }
 
   &__input {
@@ -45,7 +48,7 @@
     position: absolute;
     top: var(--toggle-space);
     left: var(--toggle-space);
-    background-color: $white;
+    background-color: var(--white);
     border-radius: 50%;
     transition: transform 300ms ease;
 
